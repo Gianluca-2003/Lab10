@@ -12,7 +12,7 @@ class Model:
         self._idMap = {}
         #for country in self._countries:
             #self._idMap[country.CCode] = country
-        self._year = None
+        self._year = 1980
         self._nodes = None
 
 
@@ -54,7 +54,19 @@ class Model:
         else:
             return nodi[1:]
 
+    def visita_iterativa(self, source):
+        visitati = set()
+        da_visitare = [source]
 
+        while da_visitare:
+            nodo = da_visitare.pop()
+            if nodo not in visitati:
+                visitati.add(nodo)
+                for vicino in self._graph.neighbors(nodo):
+                    if vicino not in visitati:
+                        da_visitare.append(vicino)
+
+        return visitati
 
 
 
