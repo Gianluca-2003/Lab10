@@ -12,7 +12,7 @@ class Model:
         self._idMap = {}
         #for country in self._countries:
             #self._idMap[country.CCode] = country
-        self._year = 1980
+        self._year = None
         self._nodes = None
 
 
